@@ -1,0 +1,16 @@
+{% if messages %}
+	<ul class="sitemessages">
+		{% for message in messages%}
+		<li>
+			{{ message }}
+		</li>
+		{% endfor %}
+	</ul>
+{% endif %}
+<div>
+	<form action="." method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Crear"/>
+	</form>
+</div>
